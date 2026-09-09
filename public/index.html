@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta name="theme-color" content="#0E0C0B" />
+		<title>КИМ БАО — корейский стрит-фуд и доставка</title>
+		<meta
+			name="description"
+			content="КИМ БАО — корейский стрит-фуд: бао ручной лепки, токпокки, рамён и доставка за 45 минут."
+		/>
+		<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+		<link rel="stylesheet" href="/css/style.css" />
+	</head>
+	<body data-loading="true">
+		<!-- ── Preloader ── -->
+		<div class="preloader" id="preloader" aria-hidden="true">
+			<div class="preloader__inner">
+				<div class="preloader__mark">
+					<span class="preloader__hanja">김</span>
+				</div>
+				<div class="preloader__word" aria-label="КИМ БАО">
+					<span>К</span><span>И</span><span>М</span><span class="preloader__gap"></span><span>Б</span><span>А</span
+					><span>О</span>
+				</div>
+				<div class="preloader__meta">
+					<span>KOREAN STREET FOOD</span>
+					<span class="preloader__count" id="preloaderCount">0%</span>
+				</div>
+				<div class="preloader__bar"><i id="preloaderBar"></i></div>
+			</div>
+			<div class="preloader__curtain"></div>
+		</div>
+
+		<!-- ── Header ── -->
+		<header class="site-header" id="siteHeader">
+			<a class="brand" href="/" data-link>
+				<span class="brand__mark">김</span>
+				<span class="brand__text">КИМ<em>БАО</em></span>
+			</a>
+			<nav class="site-nav" id="siteNav">
+				<a href="/" data-link data-nav="/">Главная</a>
+				<a href="/menu" data-link data-nav="/menu">Меню</a>
+				<a href="/account" data-link data-nav="/account">Кабинет</a>
+				<a href="/admin" data-link data-nav="/admin" id="adminLink" hidden>Админка</a>
+			</nav>
+			<div class="header-actions">
+				<button class="ghost-btn" id="authBtn" type="button">Войти</button>
+				<button class="cart-btn" id="cartBtn" type="button" aria-label="Открыть корзину">
+					<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+						<path
+							d="M4 7h16l-1.5 12.2a2 2 0 0 1-2 1.8H7.5a2 2 0 0 1-2-1.8L4 7Zm4 0a4 4 0 0 1 8 0"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.7"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+					</svg>
+					<span class="cart-btn__count" id="cartCount">0</span>
+				</button>
+				<button class="burger" id="burger" type="button" aria-label="Меню навигации"><i></i><i></i></button>
+			</div>
+		</header>
+
+		<!-- ── Page transition curtain ── -->
+		<div class="page-curtain" id="pageCurtain" aria-hidden="true"><span>КИМ БАО</span></div>
+
+		<main id="app" class="app"></main>
+
+		<footer class="site-footer">
+			<div class="footer-grid">
+				<div>
+					<div class="footer-logo">КИМ БАО</div>
+					<p>Корейский стрит-фуд без компромиссов. Готовим на живом огне с 2014 года.</p>
+				</div>
+				<div>
+					<h4>Контакты</h4>
+					<p>ул. Лубянская 12, Москва</p>
+					<p>+7 495 000-12-12</p>
+					<p>ежедневно 11:00 — 23:00</p>
+				</div>
+				<div>
+					<h4>Доставка</h4>
+					<p>45 минут по центру</p>
+					<p>Бесплатно от 1500 ₽</p>
+					<p>Оплата картой или наличными</p>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<span>© 2026 КИМ БАО</span>
+				<span>서울의 봈콃 — огонь Сеула</span>
+			</div>
+		</footer>
+
+		<!-- ── Cart drawer ── -->
+		<div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+		<aside class="cart-drawer" id="cartDrawer" aria-label="Корзина" hidden>
+			<header class="cart-drawer__head">
+				<h3>Корзина</h3>
+				<button class="icon-btn" id="cartClose" type="button" aria-label="Закрыть">×</button>
+			</header>
+			<div class="cart-drawer__body" id="cartBody"></div>
+			<footer class="cart-drawer__foot" id="cartFoot"></footer>
+		</aside>
+
+		<div class="toast-layer" id="toastLayer"></div>
+		<div class="fly-layer" id="flyLayer" aria-hidden="true"></div>
+
+		<script type="module" src="/js/app.js"></script>
+	</body>
+</html>
