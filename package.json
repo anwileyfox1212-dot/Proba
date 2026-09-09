@@ -1,0 +1,19 @@
+{
+  "name": "kim-bao",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "КИМ БАО — сайт корейского стрит-фуд ресторана с онлайн-заказом, личным кабинетом и админ-панелью",
+  "scripts": {
+    "dev": "node server/index.js",
+    "start": "node server/index.js",
+    "build": "node scripts/build.mjs",
+    "start:dist": "node server/index.js",
+    "test": "node scripts/test.mjs"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

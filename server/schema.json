@@ -1,0 +1,40 @@
+{
+  "$comment": "Схема локальной JSON-БД (server/data/db.json). Файл БД создаётся автоматически при первом запуске сервера.",
+  "version": 1,
+  "collections": {
+    "users": {
+      "id": "string (usr_xxx)",
+      "login": "string, уникальный",
+      "name": "string",
+      "phone": "string",
+      "address": "string",
+      "role": "'user' | 'admin'",
+      "passwordHash": "string 'salt:pbkdf2sha256'",
+      "createdAt": "ISO date"
+    },
+    "orders": {
+      "id": "string (ord_xxx)",
+      "number": "number, человекопонятный номер заказа",
+      "userId": "string → users.id",
+      "items": "[{ id, name, price, qty }]",
+      "subtotal": "number",
+      "delivery": "number",
+      "total": "number",
+      "customer": "{ name, phone, address, comment }",
+      "payment": "'cash' | 'card'",
+      "status": "'new'|'accepted'|'cooking'|'ready'|'delivering'|'done'|'rejected'",
+      "rejectReason": "string | null",
+      "history": "[{ status, at }]",
+      "createdAt": "ISO date",
+      "updatedAt": "ISO date"
+    },
+    "sessions": {
+      "token": "string (hex)",
+      "userId": "string → users.id",
+      "createdAt": "ISO date, TTL 30 дней"
+    },
+    "counters": {
+      "order": "number, последний выданный номер заказа"
+    }
+  }
+}
